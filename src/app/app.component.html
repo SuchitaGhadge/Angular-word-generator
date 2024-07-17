@@ -4,21 +4,23 @@
   </div>
 
   <input
-    type="range" 
+    type="range"
     min="1"
     max="50"
     value ="{{ limit }}"
     class=" form-control-range"
     (change)="handleSliderChange($event)"
- />
+    />
 
- <div class="btnClass text-center">
-  <button style="display: block;" class="btn btn-info" (click)="generate()">Generate Words</button>
- </div>
+    <div class="btnClass text-center">
+      <button style="display: block;" class="btn btn-info" (click)="generate()">Generate Words</button>
+    </div>
 
- <div *ngIf="words" class="card card-body">
-   <div class="display-4">
-    {{words}}
-   </div>
- </div>
-</div>
+    @if (words) {
+      <div class="card card-body">
+        <div class="display-4">
+          {{words}}
+        </div>
+      </div>
+    }
+  </div>
